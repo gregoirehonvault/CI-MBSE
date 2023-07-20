@@ -16,4 +16,4 @@ Testcase: testInitialisation took 0 sec
 Testcase: testDistance took 0 sec
 Testcase: testTranslater1 took 0 sec
 Testcase: testTranslater2 took 0 sec
-test
+t

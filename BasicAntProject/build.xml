@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <project name="AntTest" default="build" basedir=".">
 	<description>
+	---
 		Builder Ant pour tests locaux
 	</description>
 	
