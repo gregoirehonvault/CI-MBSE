@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8/"
+     xml:base="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#letter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#letter"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#name -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#AbsolutePosition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#AbsolutePosition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#Position"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#AttributeXDescriptor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#AttributeXDescriptor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#GraphicalFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#AttributeYDescriptor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#AttributeYDescriptor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#GraphicalFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#GraphicalFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#GraphicalFeature"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#GraphicsDescriptor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#GraphicsDescriptor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#ModelElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#ModelElement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#Module -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#Module"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#ModuleInterface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#ModuleInterface"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#NameDescriptor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#NameDescriptor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#GraphicalFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#PlaceReference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#PlaceReference">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#ModelElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#Position -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#Position"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#RelativePosition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#RelativePosition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#Position"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#State -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#State">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#ModelElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#name"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#Transition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#Transition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#ModelElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ghonvaul/ontologies/2023/6/untitled-ontology-8#letter"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+

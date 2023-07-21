@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://owl.protege.stanford.edu#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:UML2="org.omg.xmi.namespace.UML2" xml:base="http://owl.protege.stanford.edu">
+<owl:Class rdf:ID="ModelElement"/>
+<owl:Class rdf:ID="StructuralElement">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#ModelElement"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#element"/>
+</owl:onProperty>
+<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:ID="Arc">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#ModelElement"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#multiplicity"/>
+</owl:onProperty>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#fromNode"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#toNode"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#typeArc"/>
+</owl:onProperty>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<owl:equivalentClass>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#fromNode"/>
+</owl:onProperty>
+<owl:allValuesFrom rdf:resource="#Place"/>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#toNode"/>
+</owl:onProperty>
+<owl:allValuesFrom rdf:resource="#Transition"/>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#fromNode"/>
+</owl:onProperty>
+<owl:allValuesFrom rdf:resource="#Transition"/>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#toNode"/>
+</owl:onProperty>
+<owl:allValuesFrom rdf:resource="#Place"/>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:unionOf>
+</owl:Class>
+</owl:equivalentClass>
+</owl:Class>
+<owl:Class rdf:ID="Node">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#ModelElement"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#name"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#position"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:ID="Page">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#StructuralElement"/>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:ID="ModuleInstance">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#StructuralElement"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#interface"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:ID="Place">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#Node"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#attributeY"/>
+</owl:onProperty>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#attributeX"/>
+</owl:onProperty>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:ID="Transition">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#Node"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#transitionFunction"/>
+</owl:onProperty>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#timeFunction"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:ID="NodeReference">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#Node"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#reference"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:ID="TransitionReference">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#NodeReference"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#reference"/>
+</owl:onProperty>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Transition"/>
+<owl:Class rdf:about="#TransitionReference"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:ID="PlaceReference">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#NodeReference"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#reference"/>
+</owl:onProperty>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Place"/>
+<owl:Class rdf:about="#PlaceReference"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:ID="Net">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#name"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#element"/>
+</owl:onProperty>
+<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:ID="Module">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#element"/>
+</owl:onProperty>
+<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#interface"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:ID="GraphicalFeature">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#graphics"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:ObjectProperty rdf:ID="name">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#NameDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Node"/>
+<owl:Class rdf:about="#Net"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:ID="position">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Position"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Node"/>
+<owl:Class rdf:about="#Arc"/>
+<owl:Class rdf:about="#GraphicsDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:Class rdf:ID="Position">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:DatatypeProperty rdf:about="#x"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:DatatypeProperty rdf:about="#y"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="x">
+<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Position"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="y">
+<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Position"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="graphics">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#GraphicsDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#GraphicalFeature"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:Class rdf:ID="NameDescriptor">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#GraphicalFeature"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:DatatypeProperty rdf:about="#valueName"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="valueName">
+<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#NameDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:DatatypeProperty>
+<owl:Class rdf:ID="MarkingDescriptor">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#GraphicalFeature"/>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:ObjectProperty rdf:ID="marking">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#MarkingDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Place"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:ID="initialMarking">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#MarkingDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Place"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:ID="token">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Token"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#MarkingDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:Class rdf:ID="Token"/>
+<owl:Class rdf:ID="IntegerToken">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#Token"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:DatatypeProperty rdf:about="#valueToken"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="valueToken">
+<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#IntegerToken"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:DatatypeProperty>
+<owl:Class rdf:ID="RelativePosition">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#Position"/>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:ID="AbsolutePosition">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#Position"/>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:ObjectProperty rdf:ID="multiplicity">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#MultiplicityDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Arc"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:ID="reference">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Node"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#NodeReference"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:ID="fromNode">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Node"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Arc"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:ID="toNode">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Node"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Arc"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:ID="element">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#ModelElement"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Module"/>
+<owl:Class rdf:about="#StructuralElement"/>
+<owl:Class rdf:about="#Net"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:Class rdf:ID="GraphicsDescriptor">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#position"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:ID="MultiplicityDescriptor">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#GraphicalFeature"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:DatatypeProperty rdf:about="#valueMultiplicity"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="valueMultiplicity">
+<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#MultiplicityDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="interface">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#ModuleInterface"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Module"/>
+<owl:Class rdf:about="#ModuleInstance"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:Class rdf:ID="ModuleInterface">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#input"/>
+</owl:onProperty>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Place"/>
+<owl:Class rdf:about="#Transition"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:ObjectProperty rdf:about="#output"/>
+</owl:onProperty>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Place"/>
+<owl:Class rdf:about="#Transition"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:ObjectProperty rdf:ID="input">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Node"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#ModuleInterface"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:ID="output">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Node"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#ModuleInterface"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:Class rdf:ID="ArcType">
+<owl:equivalentClass>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<owl:Thing rdf:about="#normal"/>
+<owl:Thing rdf:about="#inhibitor"/>
+<owl:Thing rdf:about="#reset"/>
+<owl:Thing rdf:about="#read"/>
+</owl:oneOf>
+</owl:Class>
+</owl:equivalentClass>
+</owl:Class>
+<owl:ObjectProperty rdf:ID="typeArc">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#ArcType"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Arc"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:Class rdf:ID="AttributeXDescriptor">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#GraphicalFeature"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:DatatypeProperty rdf:about="#valueAttributeX"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="valueAttributeX">
+<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#AttributeXDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="attributeX">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#AttributeXDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Place"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:Class rdf:ID="AttributeYDescriptor">
+<rdfs:subClassOf>
+<owl:Class rdf:about="#GraphicalFeature"/>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:DatatypeProperty rdf:about="#valueAttributeY"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="valueAttributeY">
+<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#AttributeYDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="attributeY">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#AttributeYDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Place"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:Class rdf:ID="TransitionFunctionDescriptor">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:DatatypeProperty rdf:about="#firingLevel"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:DatatypeProperty rdf:about="#functionName"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:ObjectProperty rdf:ID="transitionFunction">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#TransitionFunctionDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Transition"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<owl:DatatypeProperty rdf:ID="firingLevel">
+<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#TransitionFunctionDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="functionName">
+<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#TransitionFunctionDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:DatatypeProperty>
+<owl:Class rdf:ID="TimeFunctionDescriptor">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:DatatypeProperty rdf:about="#timeFrom"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:DatatypeProperty rdf:about="#timeTo"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty>
+<owl:DatatypeProperty rdf:about="#possibility"/>
+</owl:onProperty>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="timeFrom">
+<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#TimeFunctionDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="timeTo">
+<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#TimeFunctionDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="possibility">
+<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#TimeFunctionDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="timeFunction">
+<rdfs:range>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#TimeFunctionDescriptor"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:range>
+<rdfs:domain>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<owl:Class rdf:about="#Transition"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:domain>
+</owl:ObjectProperty>
+<ArcType rdf:ID="normal"/>
+<ArcType rdf:ID="inhibitor"/>
+<ArcType rdf:ID="reset"/>
+<ArcType rdf:ID="read"/>
+</rdf:RDF>
