@@ -1,5 +1,7 @@
 # pip install --user gradio
 
+print("test")
+
 
 import gradio as gr
 
@@ -9,4 +11,4 @@ with gr.Blocks() as demo:
 
 
 #share=True
-demo.launch(share=True)
+print(demo.launch(share=True))
