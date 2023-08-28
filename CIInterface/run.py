@@ -9,4 +9,4 @@ with gr.Blocks() as demo:
 
 
 #share=True
-demo.launch()
+demo.launch(share=True)
