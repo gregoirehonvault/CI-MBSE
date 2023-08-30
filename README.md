@@ -6,4 +6,4 @@ In BasicAntProject I try to understand how github manages continuous integration
   - Merging and versioning
   - automatic testing with ant xml files via github actions
 
-Now I try to see how it can be applied to Model Based Languages like Tina.
+The goal it to see how it can be applied to Model Based Languages like Tina.
